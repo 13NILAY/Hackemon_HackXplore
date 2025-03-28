@@ -24,7 +24,7 @@ const Login = () => {
       if (role === "student") {
         navigate("/student-dashboard");
       } else if (role === "teacher") {
-        navigate("/teacher-dashboard");
+        navigate("/teacher");
       } else {
         setError("Invalid role. Please contact support.");
       }

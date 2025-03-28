@@ -23,8 +23,11 @@
     "mongoose": "^8.13.0",
     "mongosh": "^2.4.2",
     "multer-storage-cloudinary": "^4.0.0",
+    "natural": "^8.0.1",
+    "node-fetch": "^3.3.2",
     "nodemon": "^3.1.9",
     "pdfkit": "^0.16.0",
-    "socket.io": "^4.8.1"
+    "socket.io": "^4.8.1",
+    "string-similarity": "^4.0.4"
   }
 }
