@@ -1,9 +1,11 @@
 const jwt = require("jsonwebtoken");
-const SECRET_KEY = process.env.ACESS_TOKEN_SECRET;
+require("dotenv").config();
+const SECRET_KEY = process.env.ACCESS_TOKEN_SECRET;
 
 // Middleware to check authentication
 const authenticate = (req, res, next) => {
-  const token = req.header("Authorization");
+  const token = req.header("Authorization")?.split(" ")[1];
+  console.log(token);
   if (!token) return res.status(401).json({ error: "Access Denied" });
 
   try {
@@ -11,7 +13,8 @@ const authenticate = (req, res, next) => {
     req.user = verified;
     next();
   } catch (err) {
-    res.status(400).json({ error: "Invalid Token" });
+    console.log(err);
+    res.status(401).json({ error: "Invalid Token" });
   }
 };
 

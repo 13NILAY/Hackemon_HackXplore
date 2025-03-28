@@ -1,8 +1,10 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { useUser } from "../context/UserContext";
 
 const Login = () => {
   const [email, setEmail] = useState("");
+  const {setUser} =useUser();
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const navigate = useNavigate(); // Initialize navigation
@@ -15,16 +17,20 @@ const Login = () => {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email, password }),
       });
-
+      
       const data = await response.json();
       if (!response.ok) throw new Error(data.message || "Login failed");
+      const {user,token } = data;
+      console.log(data);
 
       // Assuming the response contains a 'role' field (student/teacher)
-      const { role } = data;
-      if (role === "student") {
+       localStorage.setItem('user', JSON.stringify(user));
+        localStorage.setItem('token', token);
+
+      if (user.role === "student") {
         navigate("/student-dashboard");
-      } else if (role === "teacher") {
-        navigate("/teacher");
+      } else if (user.role === "teacher") {
+        navigate("/teacher-dashboard");
       } else {
         setError("Invalid role. Please contact support.");
       }

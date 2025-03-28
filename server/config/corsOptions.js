@@ -10,7 +10,7 @@ const corsOptions = {
     },
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
     credentials:true,
-    allowedHeaders: ['Authorization', 'Content-Type','authorization'], // Allow Authorization header
+    allowedHeaders: ['Authorization', 'Content-Type','authorization',"Content-Encoding"], // Allow Authorization header
     optionsSuccessStatus: 200
 }
 

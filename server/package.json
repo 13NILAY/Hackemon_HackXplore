@@ -11,6 +11,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
+    "@google/generative-ai": "^0.24.0",
     "axios": "^1.8.4",
     "bcrypt": "^5.1.1",
     "bcryptjs": "^3.0.2",
@@ -19,6 +20,7 @@
     "cors": "^2.8.5",
     "dotenv": "^16.4.7",
     "express": "^4.21.2",
+    "groq-sdk": "^0.17.0",
     "jsonwebtoken": "^9.0.2",
     "mongoose": "^8.13.0",
     "mongosh": "^2.4.2",
@@ -26,6 +28,7 @@
     "natural": "^8.0.1",
     "node-fetch": "^3.3.2",
     "nodemon": "^3.1.9",
+    "pako": "^2.1.0",
     "pdfkit": "^0.16.0",
     "socket.io": "^4.8.1",
     "string-similarity": "^4.0.4"
