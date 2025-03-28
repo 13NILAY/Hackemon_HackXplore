@@ -47,6 +47,7 @@ const CourseDetails = () => {
 
             if (response.ok) {
                 const data = await response.json();
+                console.log('Course data:', data);
                 setCourse(data);
                 checkFinalAssessment(data);
             } else {
@@ -269,7 +270,7 @@ const CourseDetails = () => {
     }    
 
     const handleChapterClick = (chapterId) => {
-        navigate(`/course/${courseId}/chapter/${chapterId}`);
+        navigate(`/teacher/course/${courseId}/chapter/${chapterId}`);
     };
 
     const handleEditClick = () => {
@@ -405,7 +406,7 @@ const CourseDetails = () => {
                     <div className="flex items-center space-x-4 mb-4">
                         <button
                             className="bg-white/20 p-2 rounded-full hover:bg-white/30 transition"
-                            onClick={() => navigate('/my-courses')}
+                            onClick={() => navigate('/teacher/my-courses')}
                         >
                             <ArrowLeft className="text-white" size={24} />
                         </button>
@@ -507,7 +508,7 @@ const CourseDetails = () => {
                             }`}
                         onClick={() => {
                             if (!passedFinal && allChaptersCompleted) {
-                                navigate(`/course/${courseId}/course-assessment`, {
+                                navigate(`/teacher/course/${courseId}/course-assessment`, {
                                     state: {
                                         topic: course.courseName,
                                         skills: course.skills,

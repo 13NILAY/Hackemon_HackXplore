@@ -37,25 +37,6 @@ function App() {
           <Routes>
             <Route path="/" element={<Login />} />
             <Route path="/register" element={<Register />} />
-            <Route
-              path="/course/:courseId/course-assessment"
-              element={<CourseAssessment />}
-            />
-            <Route path="/my-courses" element={<MyCourses />} />
-            <Route path="/create-course" element={<CreateCourse />} />
-            <Route path="/course/:courseId" element={<CourseDetails />} />
-            <Route
-              path="/course/:courseId/chapter/:chapterId"
-              element={<ChapterDetails />}
-            />
-            <Route
-              path="/course/:courseId/chapter/:chapterId/assessment"
-              element={<ChapterAssessment />}
-            />
-            <Route path="/assessment/:examId" element={<Exam />} />
-            <Route path="/assessment" element={<ExamDashboard />} />
-            <Route path="/examreview" element={<ExamReview />} />
-            <Route path="/pdf-uploader" element={<PDFUploader />} />
             if(useUser().user.role==='student')
             {
               <>
@@ -68,7 +49,7 @@ function App() {
             if(useUser().user.role==='teacher')
             {
               <>
-                <Route path="/teacher" element={<TeacherLayout />}>
+      <Route path="/teacher" element={<TeacherLayout />}>
                   <Route index element={<Navigate replace to="dashboard" />} />
                   <Route path="dashboard" element={<TeacherDashboard />} />
                   <Route
@@ -81,7 +62,26 @@ function App() {
                     path="assignments/:id/submissions"
                     element={<Submissions />}
                   />
-                </Route>
+                  <Route path="my-courses" element={<MyCourses />} />
+                  <Route path="create-course" element={<CreateCourse />} />
+                  <Route path="course/:courseId" element={<CourseDetails />} />
+                  <Route
+                    path="course/:courseId/chapter/:chapterId"
+                    element={<ChapterDetails />}
+                  />
+                  <Route
+                    path="course/:courseId/chapter/:chapterId/assessment"
+                    element={<ChapterAssessment />}
+                  />
+                  <Route path="assessment/:examId" element={<Exam />} />
+                  <Route path="assessment" element={<ExamDashboard />} />
+                  <Route path="examreview" element={<ExamReview />} />
+                  <Route
+                  path="course/:courseId/course-assessment"
+                  element={<CourseAssessment />}
+                />
+          </Route>
+                
               </>
             }
           </Routes>

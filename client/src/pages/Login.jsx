@@ -28,9 +28,9 @@ const Login = () => {
         localStorage.setItem('token', token);
 
       if (user.role === "student") {
-        navigate("/student-dashboard");
+        navigate("/student");
       } else if (user.role === "teacher") {
-        navigate("/teacher-dashboard");
+        navigate("/teacher");
       } else {
         setError("Invalid role. Please contact support.");
       }

@@ -209,7 +209,7 @@ const CreateCourse = () => {
                     await createAssignedCourseForTeacher(courseId);
                 }
 
-                navigate(`/course/${courseId}`);
+                navigate(`/teacher/course/${courseId}`);
             } else {
                 toast.error("Course created, but unable to retrieve course ID.");
             }
@@ -455,7 +455,7 @@ const createAssignedCourseForTeacher = async (courseId) => {
 </div>
 
         <div className="mt-6 flex justify-between items-center">
-          {step === 0 && <button onClick={() => navigate('/my-courses')} className="p-2 bg-black text-white rounded cursor-pointer">Back to My Courses</button>}
+          {step === 0 && <button onClick={() => navigate('/teacher/my-courses')} className="p-2 bg-black text-white rounded cursor-pointer">Back to My Courses</button>}
           {step > 0 && <button onClick={() => setStep(step - 1)} className="p-2 bg-gray-300 rounded">Back</button>}
           
           {step === 3 && (

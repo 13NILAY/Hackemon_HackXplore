@@ -67,7 +67,7 @@ const MyCourses = () => {
                             </h2>
                             <button 
                                 className="flex items-center gap-2 bg-white text-blue-600 px-5 py-2.5 rounded-full font-semibold hover:bg-blue-50 transition-all duration-300 transform hover:scale-105 shadow-md"
-                                onClick={() => navigate('/create-course')}
+                                onClick={() => navigate('/teacher/create-course')}
                             >
                                 <PlusCircle className="w-5 h-5" />
                                 Create Course
@@ -91,7 +91,7 @@ const MyCourses = () => {
                                     <div 
                                         key={course.id} 
                                         className="transform transition-all duration-300 hover:scale-105 hover:shadow-2xl"
-                                        onClick={() => navigate(`/course/${course.id}`)}
+                                        onClick={() => navigate(`/teacher/course/${course.id}`)}
                                     >
                                         <CourseCard 
                                             course={course} 

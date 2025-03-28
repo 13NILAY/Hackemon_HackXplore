@@ -56,7 +56,7 @@ const TeacherSidebar = () => {
           </li>
           <li>
             <NavLink
-              to="/teacher/course"
+              to="/teacher/my-courses"
               className={({ isActive }) =>
                 `flex items-center gap-3 p-4 text-lg rounded transition font-semibold ${
                   isActive ? "bg-blue-100 text-blue-700 font-bold" : "hover:bg-blue-700 hover:text-white"

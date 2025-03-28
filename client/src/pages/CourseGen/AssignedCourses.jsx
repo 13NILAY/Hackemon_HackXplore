@@ -45,7 +45,7 @@ const AssignedCourses = () => {
     }, [user?.token, user?._id]);
 
     const handleCourseClick = (courseId) => {
-        navigate(`/course/${courseId}`);
+        navigate(`/teacher/course/${courseId}`);
     };
 
     return (

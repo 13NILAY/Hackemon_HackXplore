@@ -24,6 +24,7 @@ const ChapterAssessment = () => {
         const generateChapterAssessment = async () => {
             try {
                 setLoading(true);
+                console.log(courseId, chapterId);
                 const res = await axios.post(
                     `http://localhost:8000/api/assessment/${courseId}/chapters/${chapterId}/assessment`,
                     { userId: user._id },
@@ -110,9 +111,9 @@ const ChapterAssessment = () => {
                 // After 3 seconds, navigate to next chapter or course details
                 setTimeout(() => {
                     if (nextChapter) {
-                        navigate(`/course/${courseId}/chapter/${nextChapter._id}`);
+                        navigate(`/teacher/course/${courseId}/chapter/${nextChapter._id}`);
                     } else {
-                        navigate(`/course/${courseId}`);
+                        navigate(`/teacher/course/${courseId}`);
                     }
                 }, 3000);
             }
@@ -146,7 +147,7 @@ const ChapterAssessment = () => {
                 <div className="text-center">
                     <p className="text-red-600 mb-4">{error}</p>
                     <button 
-                        onClick={() => navigate(`/course/${courseId}/chapter/${chapterId}`)}
+                        onClick={() => navigate(`/teacher/course/${courseId}/chapter/${chapterId}`)}
                         className="px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700"
                     >
                         Return to Chapter
@@ -165,7 +166,7 @@ const ChapterAssessment = () => {
                 userAnswers={userAnswers}
                 quiz={quiz}
                 passingScore={70}
-                onReturn={() => navigate(`/course/${courseId}/chapter/${chapterId}`)}
+                onReturn={() => navigate(`/teacher/course/${courseId}/chapter/${chapterId}`)}
             />
         );
     }

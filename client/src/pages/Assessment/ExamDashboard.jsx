@@ -56,7 +56,7 @@ const ExamDashboard = () => {
         topic
       });
       const examId = res.data._id;
-      navigate(`/assessment/${examId}`);
+      navigate(`/teacher/assessment/${examId}`);
     } catch (error) {
       console.error('Error generating assessment', error);
     } finally {
@@ -67,7 +67,7 @@ const ExamDashboard = () => {
 
   // Reattempt assessment
   const reattemptAssessment = (examId) => {
-    navigate(`/assessment/${examId}`);
+    navigate(`/teacher/assessment/${examId}`);
   };
 
   return (

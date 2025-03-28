@@ -120,7 +120,7 @@ const ExamReview = () => {
       {/* Navigation buttons */}
       <div className="mt-8 flex justify-between">
         <button
-          onClick={() => navigate("/home")}
+          onClick={() => navigate("/teacher")}
           className="px-6 py-2  bg-blue-600 text-white rounded-lg transition shadow-md flex items-center gap-2"
         >
           Back to Home
